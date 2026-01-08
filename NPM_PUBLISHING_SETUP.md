@@ -4,7 +4,7 @@
 
 ### 1. Package Configuration (`package.json`)
 
-- ✅ **Package name**: `@portima/fe-lib`
+- ✅ **Package name**: `@portima/component-lib`
 - ✅ **Publish config**: Public access to npm registry
 - ✅ **Files included**: `dist/`, `README.md`, `LICENSE`
 - ✅ **Exports**: ES modules, CommonJS, and TypeScript definitions
@@ -13,6 +13,7 @@
 ### 2. GitHub Actions Workflows
 
 #### `.github/workflows/publish.yml`
+
 - **Triggers**: Version tags (`v*.*.*`) or manual dispatch
 - **Actions**:
   1. Installs dependencies
@@ -21,6 +22,7 @@
   4. Publishes to npm (on tag push)
 
 #### `.github/workflows/build.yml`
+
 - **Triggers**: Push to main/develop, PRs
 - **Actions**:
   1. Builds and tests the library
@@ -44,11 +46,13 @@
 ### Automated Publishing (Recommended)
 
 1. **Bump version**:
+
    ```bash
    npm version patch  # or minor, major
    ```
 
 2. **Push tag**:
+
    ```bash
    git push origin main --tags
    ```
@@ -58,6 +62,7 @@
 ### Manual Publishing
 
 1. **Build**:
+
    ```bash
    npm run build
    ```
@@ -87,6 +92,7 @@ npm login
 ### 3. Verify Package Access
 
 Ensure you have publish permissions for `@portima` scope:
+
 ```bash
 npm access ls-packages
 ```
@@ -96,7 +102,7 @@ npm access ls-packages
 The published package includes:
 
 ```
-@portima/fe-lib/
+@portima/component-lib/
 ├── dist/
 │   ├── index.js      # ES module
 │   ├── index.cjs     # CommonJS
@@ -106,6 +112,7 @@ The published package includes:
 ```
 
 **Excluded** (via `.npmignore`):
+
 - Source files (`src/`)
 - Build scripts (`scripts/`)
 - Config files
@@ -117,18 +124,20 @@ The published package includes:
 After publishing, verify:
 
 1. **Check npm registry**:
+
    ```bash
-   npm view @portima/fe-lib
+   npm view @portima/component-lib
    ```
 
 2. **Test installation**:
+
    ```bash
-   npm install @portima/fe-lib@latest
+   npm install @portima/component-lib@latest
    ```
 
 3. **Import and use**:
    ```typescript
-   import { ProfileCard, AppThemeProvider } from '@portima/fe-lib';
+   import { ProfileCard, AppThemeProvider } from "@portima/component-lib";
    ```
 
 ## 🎯 Publishing Workflow
@@ -156,7 +165,7 @@ GitHub Actions
     ↓
 npm Registry
     ↓
-9. Package available at @portima/fe-lib
+9. Package available at @portima/component-lib
 ```
 
 ## 📝 Version Management
@@ -174,6 +183,7 @@ Follow [Semantic Versioning](https://semver.org/):
 2. **Peer Dependencies**: Consumers must install peer dependencies (React, MUI, etc.) separately.
 
 3. **Build Requirements**: The build process requires:
+
    - Node.js >= 18.0.0
    - npm >= 9.0.0
    - Access to `@jens_erven/design-tokens` package
@@ -183,15 +193,18 @@ Follow [Semantic Versioning](https://semver.org/):
 ## 🐛 Troubleshooting
 
 ### "You do not have permission to publish"
+
 - Verify npm login: `npm whoami`
 - Check publish permissions for `@portima` scope
 - Verify `publishConfig.access` is `"public"` in package.json
 
 ### "Package already exists"
+
 - Version already published, increment version
-- Check published versions: `npm view @portima/fe-lib versions`
+- Check published versions: `npm view @portima/component-lib versions`
 
 ### GitHub Actions fails
+
 - Verify `NPM_TOKEN` secret is configured
 - Check token has publish permissions
 - Review workflow logs in GitHub Actions tab
@@ -201,4 +214,3 @@ Follow [Semantic Versioning](https://semver.org/):
 - [npm Publishing Guide](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry)
 - [Semantic Versioning](https://semver.org/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
-

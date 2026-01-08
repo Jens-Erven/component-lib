@@ -1,6 +1,6 @@
 # Publishing Guide for Component Library
 
-This guide explains how to publish `@portima/fe-lib` to npm.
+This guide explains how to publish `@portima/component-lib` to npm.
 
 ## Prerequisites
 
@@ -18,17 +18,21 @@ This guide explains how to publish `@portima/fe-lib` to npm.
 The package is automatically published when you push a version tag:
 
 1. **Update version in package.json**:
+
    ```bash
    npm version patch  # 0.0.1 -> 0.0.2
    npm version minor  # 0.0.1 -> 0.1.0
    npm version major  # 0.0.1 -> 1.0.0
    ```
+
    This automatically:
+
    - Updates `package.json` version
    - Creates a git commit
    - Creates a git tag
 
 2. **Push the tag**:
+
    ```bash
    git push origin main --tags
    ```
@@ -41,22 +45,26 @@ The package is automatically published when you push a version tag:
 ### Method 2: Manual Publishing
 
 1. **Build the library**:
+
    ```bash
    npm run build
    ```
 
 2. **Verify build output**:
+
    ```bash
    ls -la dist/
    # Should contain: index.js, index.cjs, index.d.ts
    ```
 
 3. **Publish to npm**:
+
    ```bash
    npm publish
    ```
 
    Or for a dry run (test without publishing):
+
    ```bash
    npm publish --dry-run
    ```
@@ -66,6 +74,7 @@ The package is automatically published when you push a version tag:
 ### Semantic Versioning
 
 Follow [Semantic Versioning](https://semver.org/):
+
 - **PATCH** (0.0.1 -> 0.0.2): Bug fixes, no breaking changes
 - **MINOR** (0.0.1 -> 0.1.0): New features, backward compatible
 - **MAJOR** (0.0.1 -> 1.0.0): Breaking changes
@@ -91,15 +100,19 @@ npm version 1.2.3
 Before publishing, the build process:
 
 1. **Generates MUI themes** from `@jens_erven/design-tokens`:
+
    ```bash
    npm run build:mui-themes
    ```
+
    Creates: `src/themes/index.ts`
 
 2. **TypeScript compilation**:
+
    ```bash
    tsc
    ```
+
    Generates: Type definitions in `dist/`
 
 3. **Vite build**:
@@ -117,6 +130,7 @@ The published package includes (defined in `package.json` `files` field):
 - `LICENSE` - License file
 
 Excluded (via `.npmignore`):
+
 - `src/` - Source files
 - `node_modules/` - Dependencies
 - `.storybook/` - Storybook config
@@ -128,18 +142,20 @@ Excluded (via `.npmignore`):
 After publishing, verify the package:
 
 1. **Check npm registry**:
+
    ```bash
-   npm view @portima/fe-lib
+   npm view @portima/component-lib
    ```
 
 2. **Test installation**:
+
    ```bash
-   npm install @portima/fe-lib@latest
+   npm install @portima/component-lib@latest
    ```
 
 3. **Verify exports**:
    ```typescript
-   import { ProfileCard, AppThemeProvider } from '@portima/fe-lib';
+   import { ProfileCard, AppThemeProvider } from "@portima/component-lib";
    ```
 
 ## Troubleshooting
@@ -153,7 +169,7 @@ After publishing, verify the package:
 ### "Package already exists"
 
 - Version already published, increment version number
-- Use `npm view @portima/fe-lib versions` to see published versions
+- Use `npm view @portima/component-lib versions` to see published versions
 
 ### Build fails
 
@@ -179,16 +195,19 @@ Add the following secret in GitHub repository settings:
 ### Workflow Triggers
 
 The publish workflow triggers on:
+
 - Push of version tags (`v*.*.*`)
 - Manual workflow dispatch
 
 The build workflow triggers on:
+
 - Push to `main` or `develop` branches
 - Pull requests to `main` or `develop`
 
 ## Best Practices
 
 1. **Always test locally** before publishing:
+
    ```bash
    npm run build
    npm publish --dry-run
@@ -197,6 +216,7 @@ The build workflow triggers on:
 2. **Update CHANGELOG.md** (if you maintain one) before publishing
 
 3. **Tag releases** in git for easy reference:
+
    ```bash
    git tag -a v1.0.0 -m "Release version 1.0.0"
    git push origin v1.0.0
@@ -205,4 +225,3 @@ The build workflow triggers on:
 4. **Use automated publishing** via GitHub Actions for consistency
 
 5. **Verify peer dependencies** are correctly specified before publishing
-

@@ -5,7 +5,7 @@ A React component library built with TypeScript, Material-UI, and Tailwind CSS v
 ## Installation
 
 ```bash
-npm install @portima/fe-lib
+npm install @portima/component-lib
 ```
 
 ## Dependencies
@@ -20,6 +20,7 @@ This library requires the following peer dependencies:
 - `@emotion/styled` (^11.14.1)
 
 This library also depends on:
+
 - `@jens_erven/design-tokens` - Design tokens package (TypeScript, CSS, Tailwind CSS v4)
 
 ## Usage
@@ -27,7 +28,7 @@ This library also depends on:
 ### Basic Setup
 
 ```typescript
-import { AppThemeProvider } from '@portima/fe-lib';
+import { AppThemeProvider } from "@portima/component-lib";
 
 function App() {
   return (
@@ -41,18 +42,18 @@ function App() {
 ### Components
 
 ```typescript
-import { ProfileCard, ThemeSelector, ThemeModeToggle } from '@portima/fe-lib';
+import {
+  ProfileCard,
+  ThemeSelector,
+  ThemeModeToggle,
+} from "@portima/component-lib";
 
 function MyComponent() {
   return (
     <>
       <ThemeSelector />
       <ThemeModeToggle />
-      <ProfileCard
-        name="John Doe"
-        role="Developer"
-        email="john@example.com"
-      />
+      <ProfileCard name="John Doe" role="Developer" email="john@example.com" />
     </>
   );
 }
@@ -63,6 +64,7 @@ function MyComponent() {
 The library provides pre-configured Material-UI themes based on design tokens from `@jens_erven/design-tokens`.
 
 Available themes:
+
 - `amsterdam` (light/dark)
 - `barcelona` (light/dark)
 - `berlin` (light/dark)
@@ -75,13 +77,13 @@ Design tokens are available from the `@jens_erven/design-tokens` package:
 
 ```typescript
 // TypeScript tokens
-import * as amsterdamLight from '@jens_erven/design-tokens/tokens/theme-amsterdam/light';
+import * as amsterdamLight from "@jens_erven/design-tokens/tokens/theme-amsterdam/light";
 
 // CSS variables
-import '@jens_erven/design-tokens/css/theme-amsterdam/light';
+import "@jens_erven/design-tokens/css/theme-amsterdam/light";
 
 // Tailwind CSS v4
-import '@jens_erven/design-tokens/css/tailwind';
+import "@jens_erven/design-tokens/css/tailwind";
 ```
 
 ## Development
@@ -103,6 +105,7 @@ npm run storybook
 ## Building
 
 The build process:
+
 1. Generates MUI themes from `@jens_erven/design-tokens` package
 2. Compiles TypeScript
 3. Bundles with Vite
@@ -121,11 +124,12 @@ npm run storybook
 
 ## Publishing
 
-This package is published to npm as `@portima/fe-lib`.
+This package is published to npm as `@portima/component-lib`.
 
 ### Manual Publishing
 
 1. **Update version** in `package.json`:
+
    ```bash
    npm version patch  # for 0.0.1 -> 0.0.2
    npm version minor  # for 0.0.1 -> 0.1.0
@@ -133,6 +137,7 @@ This package is published to npm as `@portima/fe-lib`.
    ```
 
 2. **Build the library**:
+
    ```bash
    npm run build
    ```
@@ -153,6 +158,7 @@ git push origin v1.0.0
 ```
 
 The GitHub Actions workflow will:
+
 1. Build the library
 2. Generate MUI themes
 3. Publish to npm automatically
@@ -165,6 +171,3 @@ The GitHub Actions workflow will:
 ## License
 
 MIT
-
-
-
