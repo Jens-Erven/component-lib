@@ -1,0 +1,13 @@
+# Example .npmrc file
+# Copy this to .npmrc and configure for your npm registry
+
+# For public npm registry (default)
+# registry=https://registry.npmjs.org/
+
+# For scoped packages, ensure access is public
+# @portima:registry=https://registry.npmjs.org/
+
+# If using a private registry, uncomment and configure:
+# registry=https://your-private-registry.com/
+# //your-private-registry.com/:_authToken=${NPM_TOKEN}
+

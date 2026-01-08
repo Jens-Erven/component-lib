@@ -1,0 +1,52 @@
+name: Build and Publish Component Library
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*.*.*" # Trigger on version tags like v1.0.0
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org/"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate MUI themes
+        run: npm run build:mui-themes
+
+      - name: Build library
+        run: npm run build
+
+      - name: Check if version tag exists
+        id: check_version
+        run: |
+          if [[ ${{ github.ref }} == refs/tags/* ]]; then
+            echo "is_tag=true" >> $GITHUB_OUTPUT
+            TAG=${GITHUB_REF#refs/tags/}
+            echo "tag=$TAG" >> $GITHUB_OUTPUT
+          else
+            echo "is_tag=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to npm (on tag)
+        if: steps.check_version.outputs.is_tag == 'true'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Dry run publish (on main branch, no tag)
+        if: steps.check_version.outputs.is_tag == 'false' && github.ref == 'refs/heads/main'
+        run: npm publish --dry-run

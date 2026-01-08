@@ -1,0 +1,43 @@
+# Source files (only ship dist/)
+src/
+*.ts
+!*.d.ts
+
+# Config files
+tsconfig.json
+vite.config.ts
+
+# Development files
+.vscode/
+.idea/
+*.log
+
+# Tests (when you add them)
+__tests__/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Storybook
+.storybook/
+storybook-static/
+
+# Scripts (not needed in published package)
+scripts/
+
+# GitHub workflows (not needed in published package)
+.github/
+
+# Documentation files (we include README.md and LICENSE via package.json "files" field)
+# But exclude other docs
+PUBLISHING.md
+PUBLISHING_CHECKLIST.md
+MIGRATION_NOTES.md
+COMPONENT_LIB_SUMMARY.md
+
+# Example files
+.npmrc.example
+
+
+
