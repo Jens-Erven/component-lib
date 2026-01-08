@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: "20"
           registry-url: "https://registry.npmjs.org/"
+          scope: "@jens_erven"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: npm ci
@@ -44,8 +47,6 @@ jobs:
       - name: Publish to npm (on tag)
         if: steps.check_version.outputs.is_tag == 'true'
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Dry run publish (on main branch, no tag)
         if: steps.check_version.outputs.is_tag == 'false' && github.ref == 'refs/heads/main'
