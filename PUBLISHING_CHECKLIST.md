@@ -1,6 +1,6 @@
 # Publishing Checklist
 
-Use this checklist before publishing a new version of `@portima/component-lib`.
+Use this checklist before publishing a new version of `@jens_erven/component-lib`.
 
 ## Pre-Publishing
 
@@ -93,19 +93,19 @@ Use this checklist before publishing a new version of `@portima/component-lib`.
 - [ ] **Verify package on npm**
 
   ```bash
-  npm view @portima/component-lib
+  npm view @jens_erven/component-lib
   ```
 
 - [ ] **Test installation in a new project**
 
   ```bash
-  npm install @portima/component-lib@latest
+  npm install @jens_erven/component-lib@latest
   ```
 
 - [ ] **Verify exports work**
 
   ```typescript
-  import { ProfileCard, AppThemeProvider } from "@portima/component-lib";
+  import { ProfileCard, AppThemeProvider } from "@jens_erven/component-lib";
   ```
 
 - [ ] **GitHub Actions workflow completed successfully**

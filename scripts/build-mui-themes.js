@@ -129,7 +129,7 @@ export const ${theme}DarkTheme = createThemeFromTokens(${theme}Dark, 'dark');`
  * 
  * \`\`\`typescript
  * import { ThemeProvider } from '@mui/material/styles';
- * import { ${themeNames[0]}LightTheme } from '@portima/component-lib';
+ * import { ${themeNames[0]}LightTheme } from '@jens_erven/component-lib';
  * 
  * function App() {
  *   return (
@@ -146,7 +146,7 @@ export const ${theme}DarkTheme = createThemeFromTokens(${theme}Dark, 'dark');`
  * 
  * \`\`\`typescript
  * import { ThemeProvider } from '@mui/material/styles';
- * import { themes, type ThemeMode } from '@portima/component-lib';
+ * import { themes, type ThemeMode } from '@jens_erven/component-lib';
  * import { useState } from 'react';
  * 
  * function App() {
@@ -169,7 +169,7 @@ export const ${theme}DarkTheme = createThemeFromTokens(${theme}Dark, 'dark');`
  * 
  * \`\`\`typescript
  * import { ThemeProvider } from '@mui/material/styles';
- * import { themes, type ThemeName, type ThemeMode } from '@portima/component-lib';
+ * import { themes, type ThemeName, type ThemeMode } from '@jens_erven/component-lib';
  * import { useState } from 'react';
  * 
  * function App() {
@@ -193,7 +193,7 @@ ${themeOptions}
  * 
  * \`\`\`typescript
  * import { createTheme, ThemeProvider } from '@mui/material/styles';
- * import { ${themeNames[0]}LightTheme } from '@portima/component-lib';
+ * import { ${themeNames[0]}LightTheme } from '@jens_erven/component-lib';
  * 
  * const customTheme = createTheme(${themeNames[0]}LightTheme, {
  *   components: {
@@ -225,7 +225,7 @@ ${themeOptions}
  * Use the provided AppThemeProvider for automatic localStorage persistence and theme management:
  * 
  * \`\`\`typescript
- * import { AppThemeProvider, useAppTheme } from '@portima/component-lib';
+ * import { AppThemeProvider, useAppTheme } from '@jens_erven/component-lib';
  * 
  * function App() {
  *   return (
@@ -359,4 +359,3 @@ export type ThemeMode = 'light' | 'dark';
 
 // Run the generator
 generateMuiThemes();
-

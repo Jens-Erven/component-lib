@@ -5,7 +5,7 @@ A React component library built with TypeScript, Material-UI, and Tailwind CSS v
 ## Installation
 
 ```bash
-npm install @portima/component-lib
+npm install @jens_erven/component-lib
 ```
 
 ## Dependencies
@@ -28,7 +28,7 @@ This library also depends on:
 ### Basic Setup
 
 ```typescript
-import { AppThemeProvider } from "@portima/component-lib";
+import { AppThemeProvider } from "@jens_erven/component-lib";
 
 function App() {
   return (
@@ -46,7 +46,7 @@ import {
   ProfileCard,
   ThemeSelector,
   ThemeModeToggle,
-} from "@portima/component-lib";
+} from "@jens_erven/component-lib";
 
 function MyComponent() {
   return (
@@ -124,7 +124,7 @@ npm run storybook
 
 ## Publishing
 
-This package is published to npm as `@portima/component-lib`.
+This package is published to npm as `@jens_erven/component-lib`.
 
 ### Manual Publishing
 
@@ -166,7 +166,7 @@ The GitHub Actions workflow will:
 ### Prerequisites
 
 - `NPM_TOKEN` secret must be configured in GitHub repository settings
-- You must be logged in to npm with publish permissions for `@portima` scope
+- You must be logged in to npm with publish permissions for `@jens_erven` scope
 
 ## License
 

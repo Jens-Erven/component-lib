@@ -4,7 +4,7 @@
 
 ### 1. Package Configuration (`package.json`)
 
-- ✅ **Package name**: `@portima/component-lib`
+- ✅ **Package name**: `@jens_erven/component-lib`
 - ✅ **Publish config**: Public access to npm registry
 - ✅ **Files included**: `dist/`, `README.md`, `LICENSE`
 - ✅ **Exports**: ES modules, CommonJS, and TypeScript definitions
@@ -91,7 +91,7 @@ npm login
 
 ### 3. Verify Package Access
 
-Ensure you have publish permissions for `@portima` scope:
+Ensure you have publish permissions for `@jens_erven` scope:
 
 ```bash
 npm access ls-packages
@@ -102,7 +102,7 @@ npm access ls-packages
 The published package includes:
 
 ```
-@portima/component-lib/
+@jens_erven/component-lib/
 ├── dist/
 │   ├── index.js      # ES module
 │   ├── index.cjs     # CommonJS
@@ -126,18 +126,18 @@ After publishing, verify:
 1. **Check npm registry**:
 
    ```bash
-   npm view @portima/component-lib
+   npm view @jens_erven/component-lib
    ```
 
 2. **Test installation**:
 
    ```bash
-   npm install @portima/component-lib@latest
+   npm install @jens_erven/component-lib@latest
    ```
 
 3. **Import and use**:
    ```typescript
-   import { ProfileCard, AppThemeProvider } from "@portima/component-lib";
+   import { ProfileCard, AppThemeProvider } from "@jens_erven/component-lib";
    ```
 
 ## 🎯 Publishing Workflow
@@ -165,7 +165,7 @@ GitHub Actions
     ↓
 npm Registry
     ↓
-9. Package available at @portima/component-lib
+9. Package available at @jens_erven/component-lib
 ```
 
 ## 📝 Version Management
@@ -195,13 +195,13 @@ Follow [Semantic Versioning](https://semver.org/):
 ### "You do not have permission to publish"
 
 - Verify npm login: `npm whoami`
-- Check publish permissions for `@portima` scope
+- Check publish permissions for `@jens_erven` scope
 - Verify `publishConfig.access` is `"public"` in package.json
 
 ### "Package already exists"
 
 - Version already published, increment version
-- Check published versions: `npm view @portima/component-lib versions`
+- Check published versions: `npm view @jens_erven/component-lib versions`
 
 ### GitHub Actions fails
 

@@ -5,7 +5,7 @@
 # registry=https://registry.npmjs.org/
 
 # For scoped packages, ensure access is public
-# @portima:registry=https://registry.npmjs.org/
+# @jens_erven:registry=https://registry.npmjs.org/
 
 # If using a private registry, uncomment and configure:
 # registry=https://your-private-registry.com/

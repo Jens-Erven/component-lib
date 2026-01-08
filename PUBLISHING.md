@@ -1,10 +1,10 @@
 # Publishing Guide for Component Library
 
-This guide explains how to publish `@portima/component-lib` to npm.
+This guide explains how to publish `@jens_erven/component-lib` to npm.
 
 ## Prerequisites
 
-1. **npm Account**: You need an npm account with publish permissions for the `@portima` scope
+1. **npm Account**: You need an npm account with publish permissions for the `@jens_erven` scope
 2. **GitHub Secrets**: Configure `NPM_TOKEN` in your GitHub repository settings
 3. **Local npm Login**: For manual publishing, you need to be logged in:
    ```bash
@@ -144,18 +144,18 @@ After publishing, verify the package:
 1. **Check npm registry**:
 
    ```bash
-   npm view @portima/component-lib
+   npm view @jens_erven/component-lib
    ```
 
 2. **Test installation**:
 
    ```bash
-   npm install @portima/component-lib@latest
+   npm install @jens_erven/component-lib@latest
    ```
 
 3. **Verify exports**:
    ```typescript
-   import { ProfileCard, AppThemeProvider } from "@portima/component-lib";
+   import { ProfileCard, AppThemeProvider } from "@jens_erven/component-lib";
    ```
 
 ## Troubleshooting
@@ -163,13 +163,13 @@ After publishing, verify the package:
 ### "You do not have permission to publish"
 
 - Ensure you're logged in: `npm login`
-- Verify you have publish access to `@portima` scope
+- Verify you have publish access to `@jens_erven` scope
 - Check `package.json` `publishConfig.access` is set to `"public"`
 
 ### "Package already exists"
 
 - Version already published, increment version number
-- Use `npm view @portima/component-lib versions` to see published versions
+- Use `npm view @jens_erven/component-lib versions` to see published versions
 
 ### Build fails
 
