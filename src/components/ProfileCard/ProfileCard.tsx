@@ -148,7 +148,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
           </Avatar>
 
           <Typography
-            variant="h6"
+            variant="h5"
             component="h2"
             fontWeight="bold"
             textAlign="center"
