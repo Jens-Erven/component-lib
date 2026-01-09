@@ -21,7 +21,7 @@ This library requires the following peer dependencies:
 
 This library also depends on:
 
-- `@jens_erven/design-tokens` - Design tokens package (TypeScript, CSS, Tailwind CSS v4)
+- `@jens_erven/design-tokens-brio` - Design tokens package (TypeScript, CSS, Tailwind CSS v4)
 
 ## Usage
 
@@ -61,7 +61,7 @@ function MyComponent() {
 
 ### Themes
 
-The library provides pre-configured Material-UI themes based on design tokens from `@jens_erven/design-tokens`.
+The library provides pre-configured Material-UI themes based on design tokens from `@jens_erven/design-tokens-brio`.
 
 Available themes:
 
@@ -73,17 +73,17 @@ Available themes:
 
 ### Design Tokens
 
-Design tokens are available from the `@jens_erven/design-tokens` package:
+Design tokens are available from the `@jens_erven/design-tokens-brio` package:
 
 ```typescript
 // TypeScript tokens
-import * as amsterdamLight from "@jens_erven/design-tokens/tokens/theme-amsterdam/light";
+import * as amsterdamLight from "@jens_erven/design-tokens-brio/tokens/theme-amsterdam/light";
 
 // CSS variables
-import "@jens_erven/design-tokens/css/theme-amsterdam/light";
+import "@jens_erven/design-tokens-brio/css/theme-amsterdam/light";
 
 // Tailwind CSS v4
-import "@jens_erven/design-tokens/css/tailwind";
+import "@jens_erven/design-tokens-brio/css/tailwind";
 ```
 
 ## Development
@@ -106,7 +106,7 @@ npm run storybook
 
 The build process:
 
-1. Generates MUI themes from `@jens_erven/design-tokens` package
+1. Generates MUI themes from `@jens_erven/design-tokens-brio` package
 2. Compiles TypeScript
 3. Bundles with Vite
 

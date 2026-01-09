@@ -1,7 +1,7 @@
 {
-  "name": "@jens_erven/component-lib",
+  "name": "@jens_erven/brio-component-lib",
   "version": "0.0.1",
-  "description": "A React component library with TypeScript, Material-UI, and Tailwind CSS",
+  "description": "A React component library for Brio with TypeScript, Material-UI, and Tailwind CSS",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -49,9 +49,6 @@
     "url": "https://github.com/your-username/component-library/issues"
   },
   "homepage": "https://github.com/your-username/component-library#readme",
-  "dependencies": {
-    "@jens_erven/design-tokens": "^0.0.2"
-  },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -121,5 +118,8 @@
     "vite": "^7.3.0",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.16"
+  },
+  "dependencies": {
+    "@jens_erven/design-tokens-brio": "^0.0.2"
   }
 }

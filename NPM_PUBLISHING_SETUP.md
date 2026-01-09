@@ -178,7 +178,7 @@ Follow [Semantic Versioning](https://semver.org/):
 
 ## ⚠️ Important Notes
 
-1. **Design Tokens Dependency**: The library depends on `@jens_erven/design-tokens`. Ensure it's published and accessible before publishing this library.
+1. **Design Tokens Dependency**: The library depends on `@jens_erven/design-tokens-brio`. Ensure it's published and accessible before publishing this library.
 
 2. **Peer Dependencies**: Consumers must install peer dependencies (React, MUI, etc.) separately.
 
@@ -186,7 +186,7 @@ Follow [Semantic Versioning](https://semver.org/):
 
    - Node.js >= 18.0.0
    - npm >= 9.0.0
-   - Access to `@jens_erven/design-tokens` package
+   - Access to `@jens_erven/design-tokens-brio` package
 
 4. **Generated Files**: `src/themes/index.ts` is generated during build and should not be committed to git.
 

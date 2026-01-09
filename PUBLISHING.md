@@ -99,7 +99,7 @@ npm version 1.2.3
 
 Before publishing, the build process:
 
-1. **Generates MUI themes** from `@jens_erven/design-tokens`:
+1. **Generates MUI themes** from `@jens_erven/design-tokens-brio`:
 
    ```bash
    npm run build:mui-themes
@@ -173,7 +173,7 @@ After publishing, verify the package:
 
 ### Build fails
 
-- Ensure `@jens_erven/design-tokens` is installed and accessible
+- Ensure `@jens_erven/design-tokens-brio` is installed and accessible
 - Run `npm install` to ensure all dependencies are installed
 - Check that `npm run build:mui-themes` completes successfully
 

@@ -4,7 +4,7 @@
 
 The `component-lib` folder has been created with a clean structure that:
 
-1. **Uses `@jens_erven/design-tokens` npm package** instead of local token generation
+1. **Uses `@jens_erven/design-tokens-brio` npm package** instead of local token generation
 2. **Keeps all React components** (ProfileCard, ThemeSelector, ThemeModeToggle)
 3. **Keeps theme provider** (AppThemeProvider, useAppTheme)
 4. **Keeps Storybook configuration** and stories
@@ -39,7 +39,7 @@ component-lib/
 │   ├── preview.ts
 │   ├── themes.ts
 │   └── vitest.setup.ts
-├── package.json (uses @jens_erven/design-tokens)
+├── package.json (uses @jens_erven/design-tokens-brio)
 ├── vite.config.ts
 ├── tsconfig.json
 ├── .gitignore
@@ -52,7 +52,7 @@ component-lib/
 
 ### package.json
 
-- ✅ Added `@jens_erven/design-tokens` as dependency
+- ✅ Added `@jens_erven/design-tokens-brio` as dependency
 - ❌ Removed token generation scripts (flatten:tokens, build:variables, build:tailwind)
 - ✅ Kept `build:mui-themes` script
 - ✅ Removed `style-dictionary` from devDependencies
@@ -60,17 +60,17 @@ component-lib/
 
 ### build-mui-themes.js
 
-- ✅ Updated to import from `@jens_erven/design-tokens/tokens/theme-{name}/{mode}`
+- ✅ Updated to import from `@jens_erven/design-tokens-brio/tokens/theme-{name}/{mode}`
 - ✅ No longer reads from local `design-system/output/` directory
 
 ### src/tokens/index.ts
 
-- ✅ Re-exports tokens from `@jens_erven/design-tokens` package
+- ✅ Re-exports tokens from `@jens_erven/design-tokens-brio` package
 - ✅ Updated documentation comments
 
 ### vite.config.ts
 
-- ✅ Added `@jens_erven/design-tokens` to external dependencies
+- ✅ Added `@jens_erven/design-tokens-brio` to external dependencies
 
 ## 📋 Next Steps
 
@@ -107,6 +107,6 @@ component-lib/
 ## ⚠️ Important Notes
 
 - The `src/themes/index.ts` file is auto-generated - do not edit manually
-- Ensure `@jens_erven/design-tokens` is published and accessible before building
+- Ensure `@jens_erven/design-tokens-brio` is published and accessible before building
 - Story assets need to be copied from the original library folder
 - The library no longer generates tokens - it only consumes them from npm

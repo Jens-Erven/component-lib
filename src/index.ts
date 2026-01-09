@@ -37,10 +37,8 @@ export {
 export { AppThemeProvider, useAppTheme } from "./providers";
 export type { AppThemeProviderProps, ThemeContextType } from "./providers";
 
-// Note: Design tokens (TypeScript and CSS) are available from @jens_erven/design-tokens package
+// Note: Design tokens (TypeScript and CSS) are available from @jens_erven/design-tokens-brio package
 // Import them directly:
-// import * as amsterdamLight from '@jens_erven/design-tokens/tokens/theme-amsterdam/light';
-// import '@jens_erven/design-tokens/css/theme-amsterdam/light';
-// import '@jens_erven/design-tokens/css/tailwind';
-
-
+// import * as amsterdamLight from '@jens_erven/design-tokens-brio/tokens/theme-amsterdam/light';
+// import '@jens_erven/design-tokens-brio/css/theme-amsterdam/light';
+// import '@jens_erven/design-tokens-brio/css/tailwind';
