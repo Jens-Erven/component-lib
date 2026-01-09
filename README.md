@@ -22,6 +22,7 @@ This library requires the following peer dependencies:
 This library also depends on:
 
 - `@jens_erven/design-tokens-brio` - Design tokens package (TypeScript, CSS, Tailwind CSS v4)
+- test
 
 ## Usage
 
